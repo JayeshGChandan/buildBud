@@ -1,4 +1,4 @@
-# 🧰 buildBud
+# buildBud
 
 **buildBud** turns a single natural-language prompt into a complete, working codebase — and then keeps evolving it with follow-up requests.
 
@@ -6,7 +6,7 @@ Instead of asking one model to emit a whole app in a single shot, buildBud runs 
 
 ---
 
-## ✨ Highlights
+## Highlights
 
 - **Two modes, one command.** Start with an empty workspace and buildBud *builds* your app from scratch. Run it again on an existing project and it switches to *update* mode, applying your change to the code that's already there.
 - **Multi-agent pipeline.** A planner, an architect, and a coder each own one stage of the work, passing structured state down the graph.
@@ -17,7 +17,7 @@ Instead of asking one model to emit a whole app in a single shot, buildBud runs 
 
 ---
 
-## 🧠 How it works
+## How it works
 
 buildBud is a [LangGraph](https://github.com/langchain-ai/langgraph) state machine with two entry paths, chosen automatically based on whether a project already exists:
 
@@ -53,7 +53,7 @@ The **Coder** stage is shared by both paths, so build and update benefit from th
 
 ---
 
-## 🚀 Getting started
+## Getting started
 
 ### Prerequisites
 
@@ -84,7 +84,7 @@ uv run python main.py
 
 ---
 
-## 🕹️ Usage
+## Usage
 
 **Build a new app** (empty workspace):
 
@@ -117,7 +117,7 @@ It reads the current files, plans only the delta, and edits in place — leaving
 
 ---
 
-## 🗂️ Project structure
+## Project structure
 
 ```
 buildBud/
@@ -134,7 +134,7 @@ buildBud/
 
 ---
 
-## 🛠️ Tech stack
+## Tech stack
 
 - **[LangGraph](https://github.com/langchain-ai/langgraph)** — agent orchestration as a state graph.
 - **[LangChain](https://python.langchain.com/)** — model abstractions and structured output.
@@ -144,7 +144,7 @@ buildBud/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Issues and pull requests are welcome. If you're changing agent behavior, please describe the prompt you tested against and the resulting `generated_project/` output.
 
