@@ -1,7 +1,7 @@
 [project]
-name = "coder-buddy"
+name = "buildbud"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI multi-agent code generator: a LangGraph planner-architect-coder pipeline with build and update modes, powered by Groq."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

@@ -8,7 +8,7 @@ from langchain_core.tools import tool
 PROJECT_ROOT = pathlib.Path.cwd() / "generated_project"
 
 # Where we persist the last build/update plan so follow-up runs stay consistent.
-STATE_FILE = PROJECT_ROOT / ".coderbuddy" / "state.json"
+STATE_FILE = PROJECT_ROOT / ".buildbud" / "state.json"
 
 # Cap how much of each file we feed back to the planner so a large project
 # does not blow up the model's context window.
@@ -58,7 +58,7 @@ def list_files(directory: str = ".") -> str:
     files = [
         str(f.relative_to(PROJECT_ROOT))
         for f in p.glob("**/*")
-        if f.is_file() and ".coderbuddy" not in f.parts
+        if f.is_file() and ".buildbud" not in f.parts
     ]
     return "\n".join(files) if files else "No files found."
 
@@ -80,7 +80,7 @@ def project_has_files() -> bool:
     if not PROJECT_ROOT.exists():
         return False
     for f in PROJECT_ROOT.glob("**/*"):
-        if f.is_file() and ".coderbuddy" not in f.parts:
+        if f.is_file() and ".buildbud" not in f.parts:
             return True
     return False
 
@@ -106,7 +106,7 @@ def get_project_context() -> str:
 
     files = sorted(
         f for f in PROJECT_ROOT.glob("**/*")
-        if f.is_file() and ".coderbuddy" not in f.parts
+        if f.is_file() and ".buildbud" not in f.parts
     )
     if not files:
         return "The project is currently empty."
@@ -129,7 +129,7 @@ def get_project_context() -> str:
 
 
 def save_project_state(plan: Optional[dict], task_plan: Optional[dict]) -> None:
-    """Persists the latest plan/task plan to .coderbuddy/state.json."""
+    """Persists the latest plan/task plan to .buildbud/state.json."""
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     payload = {"plan": plan, "task_plan": task_plan}
     STATE_FILE.write_text(json.dumps(payload, indent=2), encoding="utf-8")
