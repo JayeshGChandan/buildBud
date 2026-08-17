@@ -1,8 +1,8 @@
 # buildBud
 
-**buildBud** turns a single natural-language prompt into a complete, working codebase — and then keeps evolving it with follow-up requests.
+**buildBud** turns a single natural-language prompt into a complete, working codebase and then keeps evolving it with follow-up requests.
 
-Instead of asking one model to emit a whole app in a single shot, buildBud runs a small team of specialized agents that **plan**, **break the work down**, and **implement it one file at a time** — the way a real development team would. It's built on [LangGraph](https://github.com/langchain-ai/langgraph) and powered by [Groq](https://groq.com/).
+Instead of asking one model to emit a whole app in a single shot, buildBud runs a small team of specialized agents that **plan**, **break the work down**, and **implement it one file at a time**, the way a real development team would. It's built on [LangGraph](https://github.com/langchain-ai/langgraph) and powered by [Groq](https://groq.com/).
 
 ---
 
